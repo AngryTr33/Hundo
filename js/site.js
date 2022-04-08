@@ -1,21 +1,40 @@
 //step one - controller accepts requests
-function getMessage() {
-    let msg = document.getElementById("message").value;
-    displayMessage(msg);
+function getValues() {
+    let startValue = document.getElementById("startValue").value;
+    let endValue = document.getElementById("endValue").value;
+    displayValues(startValue, endValue);
 
 }
 
 //final step - view
-function displayMessage(message) {
-    // <li class="list-group-item">A list item</li>
+function displayValues(start, end) {
     //first get the ol element from the page
     element = document.getElementById("results");
-    //next create a new li element
-    let item = document.createElement("li");
-    //add classes to the li element
-    item.classList.add("list-group-item");
-    //set the message for the li element
-    item.innerHTML = message;
-    //add new item to the li
-    element.appendChild(item);
+
+    for (let i = start; i <= end; i++) {
+
+        //next create a new li element
+        let item = document.createElement("li");
+
+        if (i % 2 == 0) {
+            item.classList.add("boldItem");
+        }
+        else { 
+            item.classList.add("redItem");
+        }
+
+        //add classes to the li element
+        item.classList.add("list-group-item");
+
+        //set the message for the li element
+        item.innerHTML = i;
+
+        //add new item to the li
+        element.appendChild(item);
+
+    }
+
+
+
+
 }
