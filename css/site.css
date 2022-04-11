@@ -58,6 +58,7 @@ main>.container {
 
 .boldItem {
     font-weight: bolder;
+    color: black;
 }
 
 .redItem {

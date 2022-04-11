@@ -60,41 +60,50 @@
 
     <main class="flex-shrink-0">
         <div class="container mt-5">
-            <h1>THE CODE For App Name</h1>
+            <h1>THE CODE For Hundo</h1>
             <div class="row">
                 <div class="col-12 col-lg-8">
                     <pre class="line-number">
                         <code class="language-javascript">
                             //step one - controller accepts requests
-                            function getMessage() {
-                            let msg = document.getElementById("message").value;
-                            displayMessage(msg);
-
+                            function getValues() {
+                                let startValue = document.getElementById("startValue").value;
+                                let endValue = document.getElementById("endValue").value;
+                                displayValues(startValue, endValue);
+                            
                             }
-
+                            
                             //final step - view
-                            function displayMessage(message) {
-                            // <li class="list-group-item">A list item</li>
-                            //first get the ol element from the page
-                            element = document.getElementById("results");
-                            //next create a new li element
-                            let item = document.createElement("li");
-                            //add classes to the li element
-                            item.classList.add("list-group-item");
-                            //set the message for the li element
-                            item.innerHTML = message;
-                            //add new item to the li
-                            element.appendChild(item);
+                            function displayValues(start, end) {
+                                //first get the ol element from the page
+                                element = document.getElementById("results");
+                            
+                                for (let i = start; i <= end; i++) {
+                                    //next create a new div element
+                                    let item = document.createElement("div");
+                                    if (i % 2 == 0) {
+                                        item.classList.add("boldItem");
+                                    }
+                                    else { 
+                                        item.classList.add("redItem");
+                                    }
+                                    //add classes to the li element
+                                    item.classList.add("col");
+                                    //set the message for the li element
+                                    item.innerHTML = i;
+                                     //add new item to the li
+                                    element.appendChild(item);
+                                   }
                             }
                         </code>
                     </pre>
                 </div>
                 <div class="col-12 col-lg-4">
                     <h2><strong>The code is structured in two functions</strong></h2>
-                    <h3>-getMessage-</h3>
-                    <p>Gets values from the user</p>
-                    <h3>-displayMessage-</h3>
-                    <p>Displays the items on the page</p>
+                    <h3>-getValues-</h3>
+                    <p>Gets values from the user, or defaults 1 to 100</p>
+                    <h3>-displayValues-</h3>
+                    <p>Displays the numbers on the page</p>
                 </div>
             </div>
         </div>
@@ -104,7 +113,7 @@
         <div class="container-fluid">
             <div class="row row-cols-1 row-cols-lg-3 gy-2">
                 <div class="col order-last order-lg-first d-flex justify-content-start">
-                    <span>&copy; 2022 </span> Joe Gastring | joe_gastring@yahoo.com
+                    <span>&copy; 2022 &nbsp;</span>Joe Gastring | joe_gastring@yahoo.com
                 </div>
                 <div class="col d-flex align-items-center justify-content-start justify-content-lg-center">
                     <img src="img/personalLogoDarkTransparent.png" height="55" class="">

@@ -12,29 +12,19 @@ function displayValues(start, end) {
     element = document.getElementById("results");
 
     for (let i = start; i <= end; i++) {
-
-        //next create a new li element
-        let item = document.createElement("li");
-
+        //next create a new div element
+        let item = document.createElement("div");
         if (i % 2 == 0) {
             item.classList.add("boldItem");
         }
         else { 
             item.classList.add("redItem");
         }
-
         //add classes to the li element
-        item.classList.add("list-group-item");
-
+        item.classList.add("col");
         //set the message for the li element
         item.innerHTML = i;
-
         //add new item to the li
         element.appendChild(item);
-
     }
-
-
-
-
 }
