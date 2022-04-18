@@ -65,36 +65,38 @@
                 <div class="col-12 col-lg-8">
                     <pre class="line-number">
                         <code class="language-javascript">
-                            //step one - controller accepts requests
+                            // Step one - controller accepts requests
                             function getValues() {
                                 let startValue = document.getElementById("startValue").value;
                                 let endValue = document.getElementById("endValue").value;
-                                displayValues(startValue, endValue);
-                            
-                            }
-                            
-                            //final step - view
+                            // Calls next function
+                            displayValues(startValue, endValue);
+                            };
+                            // Final step - view
                             function displayValues(start, end) {
-                                //first get the ol element from the page
+                                // First get the column element from the page
                                 element = document.getElementById("results");
-                            
+
                                 for (let i = start; i <= end; i++) {
-                                    //next create a new div element
+                                    // Next create a new div element
                                     let item = document.createElement("div");
-                                    if (i % 2 == 0) {
-                                        item.classList.add("boldItem");
-                                    }
-                                    else { 
-                                        item.classList.add("redItem");
-                                    }
-                                    //add classes to the li element
+                                    if(i % 2 == 0) {
+                                    item.classList.add("boldItem");
+                                    }else{ 
+                                    item.classList.add("redItem");
+                                    };
+                                    // Add classes to the column element
                                     item.classList.add("col");
-                                    //set the message for the li element
+                                    // Set the message for the column element
                                     item.innerHTML = i;
-                                     //add new item to the li
+                                    // Add new item to the column
                                     element.appendChild(item);
-                                   }
-                            }
+                                    };
+                                };
+                            // Clear button
+                            function clear(){
+                                document.getElementById("results").innerHTML = "";
+                            };
                         </code>
                     </pre>
                 </div>
@@ -104,6 +106,8 @@
                     <p>Gets values from the user, or defaults 1 to 100</p>
                     <h3>-displayValues-</h3>
                     <p>Displays the numbers on the page</p>
+                    <h3>-clear-</h3>
+                    <p>Clears the values</p>
                 </div>
             </div>
         </div>
@@ -145,7 +149,7 @@
             'remove-indent': true,
             'left-trim': true,
             'right-trim': true
-        })
+        });
     </script>
 
 </body>

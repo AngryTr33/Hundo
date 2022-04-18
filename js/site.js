@@ -1,30 +1,28 @@
-//step one - controller accepts requests
+// Step one - controller accepts requests
 function getValues() {
     let startValue = document.getElementById("startValue").value;
     let endValue = document.getElementById("endValue").value;
+    // Calls next function
     displayValues(startValue, endValue);
-
-}
-
-//final step - view
+};
+// Final step - view
 function displayValues(start, end) {
-    //first get the col element from the page
+    // First get the column element from the page
     element = document.getElementById("results");
 
     for (let i = start; i <= end; i++) {
-        //next create a new div element
+        // Next create a new div element
         let item = document.createElement("div");
-        if (i % 2 == 0) {
+        if(i % 2 == 0) {
             item.classList.add("boldItem");
-        }
-        else { 
+        }else{ 
             item.classList.add("redItem");
-        }
-        //add classes to the col element
+        };
+        // Add classes to the column element
         item.classList.add("col");
-        //set the message for the col element
+        // Set the message for the column element
         item.innerHTML = i;
-        //add new item to the col
+        // Add new item to the column
         element.appendChild(item);
     };
 };
