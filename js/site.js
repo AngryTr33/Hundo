@@ -8,7 +8,7 @@ function getValues() {
 
 //final step - view
 function displayValues(start, end) {
-    //first get the ol element from the page
+    //first get the col element from the page
     element = document.getElementById("results");
 
     for (let i = start; i <= end; i++) {
@@ -20,11 +20,15 @@ function displayValues(start, end) {
         else { 
             item.classList.add("redItem");
         }
-        //add classes to the li element
+        //add classes to the col element
         item.classList.add("col");
-        //set the message for the li element
+        //set the message for the col element
         item.innerHTML = i;
-        //add new item to the li
+        //add new item to the col
         element.appendChild(item);
-    }
-}
+    };
+};
+// Clear button
+function clear(){
+    document.getElementById("results").innerHTML = "";
+};

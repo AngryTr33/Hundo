@@ -62,12 +62,12 @@
             <h1>Hundo: A Coding Challenge</h1>
             <p>Using javascript if and else statements prints numbers from 1 to 100. Displays the even numbers
                 <strong>BOLD</strong>, and the odd numbers <span style="color: red">Red</span>.</p>
-            <hr/>
+            <hr />
             <div class="row">
                 <div>
                     <h2>Instructions</h2>
                     <p>Enter a starting value and an ending value. Then press the button and the numbers will appear</p>
-                    <hr/>
+                    <hr />
                 </div>
                 <div class="col">
                     <label class="form-label" for="startValue"><strong>Enter a Start Value</strong></label>
@@ -78,10 +78,13 @@
                     <input class="form-control" type="number" id="endValue" value="100">
                 </div>
             </div>
-            <button class="btn btn-outline-dark btn-lg mt-3" id="btnSubmit">SHOW ME THE NUMBERS!</button>
+            <div class="row">
+                <button class="col-3 btn btn-outline-dark btn-lg mt-3 me-3" id="btnSubmit">SHOW ME THE NUMBERS!</button>
+                <button class="col-2  btn btn-outline-danger btn-lg mt-3" id="btnClear">Clear</button>
+            </div>
             <div class="mt-3">
                 <h2>Results</h2>
-                <hr/>
+                <hr />
                 <div class="row row-cols-5 row-cols-md-10 redItem messageStyle" id="results">
                     <!-- My message will go here -->
                 </div>
@@ -124,6 +127,7 @@
     <script src="js/site.js"></script>
     <script>
         document.getElementById("btnSubmit").addEventListener("click", getValues);
+        document.getElementById("btnClear").addEventListener("click", clear);
     </script>
 </body>
 
